@@ -11,9 +11,19 @@ public class fila {
         this.ultimo = -1;
     }
 
+    public int distancia(){
+        int distancia = 1;
+        int i = this.primeiro;
+        while(i!=this.ultimo) {
+            i = (i + 1) % this.tamanho;
+            distancia = distancia + 1;
+        }
+        return distancia;
+    }
+
     public boolean cheia(){
         if(this.primeiro != -1 & this.ultimo != -1){
-            if (this.primeiro == this.ultimo){
+            if (this.distancia() == this.tamanho){
                 return true;
             }
             else{
@@ -25,7 +35,7 @@ public class fila {
     }
 
     public boolean vazia(){
-        if (this.primeiro != -1 & this.ultimo != -1){
+        if (this.primeiro == -1 & this.ultimo == -1){
             return true;
         }else{
             return false;
@@ -33,8 +43,8 @@ public class fila {
     }
 
     public void insere(int valor){
-        if (!cheia()){
-            if(vazia()){
+        if (!this.cheia()){
+            if(this.vazia()){
                 this.primeiro = 0;
             }
             this.ultimo = (this.ultimo + 1) % this.tamanho;
@@ -46,7 +56,7 @@ public class fila {
     }
 
     public void remove(){
-        if (!vazia()){
+        if (!this.vazia()){
             if(this.primeiro != this.ultimo){
                 this.primeiro = (this.primeiro + 1) % this.tamanho;
             }else{
@@ -55,17 +65,23 @@ public class fila {
             }
             System.out.println("OK - removido");
         }else{
-            System.out.println("ERROR - fila ta cheia");
+            System.out.println("ERROR - fila ta vazia");
         }
     }
 
     public void imprime(){
         System.out.print("Fila = ");
         int i = this.primeiro;
+        if (this.){
+
+        }
+        System.out.print(this.dados[i]);
+        System.out.print(" ");
+
         while(i!=this.ultimo) {
+            i = (i + 1) % this.tamanho;
             System.out.print(this.dados[i]);
             System.out.print(" ");
-            i = (i + 1) % tamanho;
         }
         System.out.println();
     }
