@@ -9,7 +9,7 @@ public class main {
         P.insere(5);
         P.insere(6); // ERROR
 
-        P.imprime();
+        P.imprime(); // 1,2,3,4,5
 
         P.remove();
         P.remove();
@@ -18,7 +18,7 @@ public class main {
         P.remove();
         P.remove(); // ERROR
 
-        P.imprime();
+        P.imprime(); // vazia
 
         P.insere(10);
         P.insere(12);
@@ -27,7 +27,7 @@ public class main {
         P.insere(12);
         P.insere(20);
 
-        P.imprime();
+        P.imprime(); // 10,11,12,20
 
         System.out.println("================ FILA ================");
         fila F = new fila();
@@ -36,9 +36,10 @@ public class main {
         F.insere(3);
         F.insere(4);
         F.insere(5);
+        F.remove();
         F.insere(6); // ERROR
 
-        F.imprime();
+        F.imprime(); // 1,2,3,4,5
 
         F.remove();
         F.remove();
@@ -47,7 +48,7 @@ public class main {
         F.remove();
         F.remove(); // ERROR
 
-        F.imprime();
+        F.imprime(); // vazia
 
         F.insere(10);
         F.insere(12);
@@ -56,6 +57,6 @@ public class main {
         F.insere(12);
         F.insere(20);
 
-        F.imprime();
+        F.imprime(); // 12,11,12,20
     }
 }
