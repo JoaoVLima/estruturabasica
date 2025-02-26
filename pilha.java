@@ -11,7 +11,7 @@ public class pilha {
     }
 
     public void insere(int valor) {
-        if (!cheia()) {
+        if (!this.cheia()) {
             dados[topo] = valor;
             this.topo = this.topo + 1;
             System.out.println("OK - inserido");
@@ -37,7 +37,7 @@ public class pilha {
     }
 
     public void remove() {
-        if (!vazia()) {
+        if (!this.vazia()) {
             this.topo = this.topo - 1;
             System.out.println("OK - removido");
         } else {
