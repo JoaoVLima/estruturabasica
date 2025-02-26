@@ -72,17 +72,18 @@ public class fila {
     public void imprime(){
         System.out.print("Fila = ");
         int i = this.primeiro;
-        if (this.){
-
-        }
-        System.out.print(this.dados[i]);
-        System.out.print(" ");
-
-        while(i!=this.ultimo) {
-            i = (i + 1) % this.tamanho;
+        if (!this.vazia()) {
             System.out.print(this.dados[i]);
             System.out.print(" ");
+
+            while (i != this.ultimo) {
+                i = (i + 1) % this.tamanho;
+                System.out.print(this.dados[i]);
+                System.out.print(" ");
+            }
+            System.out.println();
+        }else{
+            System.out.println("ERROR - fila ta vazia");
         }
-        System.out.println();
     }
 }
