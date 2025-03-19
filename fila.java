@@ -81,9 +81,7 @@ public class fila {
                 System.out.print(this.dados[i]);
                 System.out.print(" ");
             }
-            System.out.println();
-        }else{
-            System.out.println("ERROR - fila ta vazia");
         }
+        System.out.println();
     }
 }
