@@ -4,22 +4,22 @@ public class fila {
     public int inicio;
     public int fim;
 
-    public fila(){
-        this.MAX = 5+1;
+    public fila() {
+        this.MAX = 5 + 1;
         this.dados = new int[this.MAX];
         this.inicio = 0;
         this.fim = 0;
     }
 
-    public boolean cheia(){
+    public boolean cheia() {
         return ((this.fim + 1) % this.MAX == this.inicio);
     }
 
-    public boolean vazia(){
+    public boolean vazia() {
         return (this.inicio == this.fim);
     }
 
-    public void insere(int elemento){
+    public void insere(int elemento) {
         if (this.cheia()) {
             System.out.println("ERROR - fila ta cheia");
             return;
@@ -29,8 +29,8 @@ public class fila {
         System.out.println("OK - inserido");
     }
 
-    public Integer remove(){
-        if (this.vazia()){
+    public Integer remove() {
+        if (this.vazia()) {
             System.out.println("ERROR - fila ta vazia");
             return null;
         }
@@ -40,14 +40,14 @@ public class fila {
         return elemento;
     }
 
-    public void imprime(){
+    public void imprime() {
         System.out.print("Fila = ");
         int i = this.inicio;
         if (!this.vazia()) {
             System.out.print(this.dados[i]);
             System.out.print(" ");
 
-            while (i != this.fim-1) {
+            while (i != this.fim - 1) {
                 i = (i + 1) % this.MAX;
                 System.out.print(this.dados[i]);
                 System.out.print(" ");

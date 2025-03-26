@@ -39,8 +39,8 @@ public class pilha {
         return elemento;
     }
 
-    public Integer consultarTopo(){
-        if (this.vazia()){
+    public Integer consultarTopo() {
+        if (this.vazia()) {
             System.out.println("ERROR - pilha ta vazia");
             return null;
         }
