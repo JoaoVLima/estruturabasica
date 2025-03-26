@@ -5,7 +5,7 @@ public class fila {
     public int fim;
 
     public fila(){
-        this.MAX = 5;
+        this.MAX = 5+1;
         this.dados = new int[this.MAX];
         this.inicio = 0;
         this.fim = 0;
@@ -47,7 +47,7 @@ public class fila {
             System.out.print(this.dados[i]);
             System.out.print(" ");
 
-            while (i != this.fim) {
+            while (i != this.fim-1) {
                 i = (i + 1) % this.MAX;
                 System.out.print(this.dados[i]);
                 System.out.print(" ");
