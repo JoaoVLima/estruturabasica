@@ -31,13 +31,13 @@ public class main {
 
         System.out.println("================ FILA ================");
         fila F = new fila();
+        F.insere(0);
         F.insere(1);
         F.insere(2);
         F.insere(3);
         F.insere(4);
-        F.insere(5);
         F.remove();
-        F.insere(6); // ERROR
+        F.insere(5); // ERROR
 
         F.imprime(); // 1,2,3,4,5
 

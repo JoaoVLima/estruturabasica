@@ -1,83 +1,54 @@
 public class fila {
-    public int tamanho;
+    public int MAX;
     public int[] dados;
-    public int primeiro;
-    public int ultimo;
+    public int inicio;
+    public int fim;
 
     public fila(){
-        this.tamanho = 5;
-        this.dados = new int[this.tamanho];
-        this.primeiro = -1;
-        this.ultimo = -1;
-    }
-
-    public int distancia(){
-        int distancia = 1;
-        int i = this.primeiro;
-        while(i!=this.ultimo) {
-            i = (i + 1) % this.tamanho;
-            distancia = distancia + 1;
-        }
-        return distancia;
+        this.MAX = 5;
+        this.dados = new int[this.MAX];
+        this.inicio = 0;
+        this.fim = 0;
     }
 
     public boolean cheia(){
-        if(this.primeiro != -1 & this.ultimo != -1){
-            if (this.distancia() == this.tamanho){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }else{
-            return false;
-        }
+        return ((this.fim + 1) % this.MAX == this.inicio);
     }
 
     public boolean vazia(){
-        if (this.primeiro == -1 & this.ultimo == -1){
-            return true;
-        }else{
-            return false;
-        }
+        return (this.inicio == this.fim);
     }
 
-    public void insere(int valor){
-        if (!this.cheia()){
-            if(this.vazia()){
-                this.primeiro = 0;
-            }
-            this.ultimo = (this.ultimo + 1) % this.tamanho;
-            this.dados[ultimo] = valor;
-            System.out.println("OK - inserido");
-        }else{
+    public void insere(int elemento){
+        if (this.cheia()) {
             System.out.println("ERROR - fila ta cheia");
+            return;
         }
+        this.dados[this.fim] = elemento;
+        this.fim = (this.fim + 1) % this.MAX;
+        System.out.println("OK - inserido");
     }
 
-    public void remove(){
-        if (!this.vazia()){
-            if(this.primeiro != this.ultimo){
-                this.primeiro = (this.primeiro + 1) % this.tamanho;
-            }else{
-                this.primeiro = -1;
-                this.ultimo = -1;
-            }
-            System.out.println("OK - removido");
-        }else{
+    public Integer remove(){
+        if (this.vazia()){
             System.out.println("ERROR - fila ta vazia");
+            return null;
         }
+        int elemento = this.dados[this.inicio];
+        this.inicio = (this.inicio + 1) % this.MAX;
+        System.out.println("OK - removido");
+        return elemento;
     }
 
     public void imprime(){
         System.out.print("Fila = ");
-        int i = this.primeiro;
+        int i = this.inicio;
         if (!this.vazia()) {
             System.out.print(this.dados[i]);
             System.out.print(" ");
 
-            while (i != this.ultimo) {
-                i = (i + 1) % this.tamanho;
+            while (i != this.fim) {
+                i = (i + 1) % this.MAX;
                 System.out.print(this.dados[i]);
                 System.out.print(" ");
             }
